@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+        // generator  函数  配合 yield 暂停代码执行 
+		function *show(){
+        	console.log("a");    // a
+            let a = yield;
+        	console.log("b")		//b
+			console.log(a)			// 5
+        }
+        let ok = show();  // generator 必须有一个变量接收它  
+        ok.next(12);        // 执行 generator 中的next方法，一个next 执行一步
+        ok.next(5);        
+	</script>
+</html>

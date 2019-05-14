@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html5_2.html</title>
+    <style>
+        *{margin:0;padding: 0;list-style: none}
+        .msg{
+            width: 100px;height: 100px;border: 1px solid #999;
+            margin-top:20px; 
+            border-radius: 5px;
+            position: relative;
+        }
+        .msg::before,.msg::after{
+            width: 0;
+            height: 0;
+            content: "";
+            border:solid transparent;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+        }
+        .msg::after{
+           border-bottom-color: #fff;
+           border-width:10px;
+           margin-left: -20px; 
+        }
+        .msg::before{
+            border-bottom-color: #999;
+           border-width:11px;
+           margin-left: -21px; 
+        }
+        .hide{
+            display: none
+        }
+
+        .btn>button{
+            margin: 30px 300px;
+            outline: none;
+            border:1px solid transparent;
+            width: 100px;
+            height: 30px;
+            border-radius: 6px;
+            color: #fff;
+            box-shadow:0 0 15px #999 inset;
+            background: -webkit-linear-gradient(red,yellow); /* Safari 5.1-6.0 */
+            background: -o-linear-gradient(red,yellow); /* Opera 11.1-12.0 */ 
+            background: -moz-linear-gradient(red,yellow); /* Firefox 3.6-15 */
+            background: linear-gradient(red,yellow); /* 标准语法 */
+        }
+        .btn>button:active{
+            transform: scale(0.88);
+            /*transition: 1s ease;*/
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./animate.min.css">
+</head>
+<body>
+<div id="up">
+    <div class="btn">
+        <button type="button">按住我1</button>
+    </div>    
+
+    <input type="text" class="inp" value="">
+   
+    <div class="msg hide animated">
+        
+    </div>
+    <table border="1" class="tablebar">
+        <thead>
+        <tr>
+            <th>AA</th>
+            <th>BB</th>
+            <th>CC</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>
+                <input type="button" class="remove " value="删除">
+            </td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>
+                <input type="button" class="remove " value="删除">
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+            <td>
+                <input type="button" class="remove " value="删除">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    $(".inp").focus(function(){
+        $(".msg").show().addClass("fadeInUp");
+    })
+    $(".inp").blur(function(){
+        $(".msg").hide().removeClass("fadeInUp");
+    })
+
+
+// 
+    $(".remove").on("click",function(){
+        // 删除整个table
+        // $(this).parents(".tablebar").remove()
+        // 删除当前这行的tr
+        $(this).parents("tr").remove()
+        // 删除父 tr 下一个 的tr
+        // $(this).parents("tr").next().remove();
+        // 删除 父 tr 前面一个 tr
+        // $(this).parents("tr").prev().remove();
+        // 删除 父 tr 的所有相邻的 tr
+        // $(this).parents("tr").siblings("tr").remove();
+    })
+
+
+// console.log(typeof obj === 'object');
+
+(function(){
+    var a=b=3;
+})();
+    console.log(a)
+    console.log(b)
+    console.log(typeof a !== undefined);   //  false
+    console.log(typeof b !== undefined);   // true
+</script>

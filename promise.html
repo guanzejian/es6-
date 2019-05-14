@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		//  Promise  
+        // 异步请求：操作之间没啥关系，同时进行多个操作
+        function createPromise(url){
+            return new Promise(function(){
+                $.ajax({url,dataType:'json',success(arr){resolve(arr)},error(err){reject(err)}})
+            })
+        }
+        Promise.all([
+            createPromise(url),
+            createPromise(url)
+        ]).then(function(arr){
+            // 全部成功
+        },function(err){
+            // 至少有一个失败
+        })
+
+        Promise.race   //竞速
+	</script>
+</html>

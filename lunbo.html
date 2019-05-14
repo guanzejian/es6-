@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;list-style: none;border:0;}
+			.all{
+				width: 500px;
+				height: 200px;
+				border:1px solid #ccc;
+				padding: 7px;
+				margin:100px auto;
+				position: relative;
+			}
+			.screen{
+				width: 500px;height: 200px;
+				overflow: hidden;
+				position: relative;
+			}
+			.screen li{
+				width: 500px;
+				height: 200px;
+				overflow: hidden;
+				float: left;
+			}
+			.screen ol li{
+				width: 20px;
+				height: 20px;
+				color: #333;
+				background: #fff;
+				margin: 5px;
+				text-align: center;
+				line-height: 20px;
+				cursor: pointer;
+			}
+			.screen ol li.current{
+				background: yellow;
+			}
+			.screen ol{
+				position: absolute;
+				z-index: 1000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all" id="box">
+			<div class="screen">
+				<ul>
+					<li><img src="./images/cbd.jpg" alt=""></li>
+					<li><img src="./images/muwu.jpg" alt=""></li>
+					<li><img src="images/shuijiao.jpg" alt=""></li>
+					<li><img src="./images/yuantiao.jpg" alt=""></li>
+				</ul>
+				<ol>
+					
+				</ol>
+			</div>
+			<div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+		</div>		
+	</body>
+	<script>
+	var box = document.getElementById("box");
+	var screen = box.children[0];
+	var ul = screen.children[0];
+	var li = ul.children;
+	var ol = screen.children[1];
+	for(var i = 0; i< li.length; i++){
+		var oli = document.createElement("li");
+		ol.appendChild(oli);
+		oli.innerHTML = i+1;
+		if(i === 0){
+			oli.className = "current"
+		}
+
+		oli.onclick = liClick;
+
+		// 记录索引
+		oli.setAttribute("index",i);
+	}
+	function liClick(){
+		for(var i = 0; i< ol.children.length; i++){
+			var li = ol.children[i];
+			li.className = '';
+		}
+		this.className = 'current';
+		var imgWidth = screen.offsetWidth;
+		var index = parseInt(this.getAttribute("index"));
+		ul.style.transform = "translate(-"+index*imgWidth+")"
+	}
+	</script>
+<script type="text/javascript">
+
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+//  class  关键字、构造器和类 分开了 
+//  class 里面直接加方法
+//es6 面向对象写法
+ 	// class user{
+ 	// 	constructor(name,pass){
+ 	// 		this.name = name;
+ 	// 		this.pass = pass;
+ 	// 	}
+
+ 	// 	showName(){
+ 	// 		alert(this.name);
+ 	// 	}
+ 	// 	showPass(){
+ 	// 		alert(this.pass);
+ 	// 	}
+ 	// }
+ 	// var ul = new user("小明","12345")
+ 	// ul.showName()
+ 	// ul.showPass()
+// es5 面向对象写法
+ 	// function user(name,pass){
+ 	// 	this.name = name;
+ 	// 	this.pass = pass;
+ 	// }
+ 	// user.prototype.showName=function(){
+ 	// 	alert(this.name)
+ 	// }
+ 	// user.prototype.showPass=function(){
+ 	// 	alert(this.pass)
+ 	// }
+ 	// var ul = new user("小明","12345")
+ 	// ul.showName()
+ 	// ul.showPass()
+
+ // 继承：extend
+ // 
+  	class user{
+ 		constructor(name,pass){
+ 			this.name = name;
+ 			this.pass = pass;
+ 		}
+
+ 		showName(){
+ 			alert(this.name);
+ 		}
+ 		showPass(){
+ 			alert(this.pass);
+ 		}
+ 	}
+ 	class vipUser extends user{
+ 		constructor(name,pass,level){
+ 			super(name,pass);
+ 			this.level = level
+ 		}
+
+ 		showLevel(){
+ 			alert(this.level)
+ 		}
+ 	}
+
+ 	var ul = new vipUser("小明","12321",3)
+ 	ul.showName()
+ 	ul.showPass()
+ 	ul.showLevel()
+	</script>
+</html>

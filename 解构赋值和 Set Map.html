@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		// 解构赋值
+		// 1、
+		let [a,b] = [12,3];
+		// console.log(a,b)
+
+		let arr = [1,2,3,1,1,NaN,"aa",true,undefined];
+		for(let key of arr){
+			console.log(key)
+		}
+		let set1 = new Set(arr);
+		console.log(set1)
+		// 类数组 只有一个value ，数组有key 和 value；
+		// 通过扩展运算符，把类数组一项一项的转成真正的数组
+		let set = [...new Set(arr)];
+		console.log(set)
+		
+
+	</script>
+</html>

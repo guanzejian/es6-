@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		// map  \  reduce  \ filter  \  forEach
+/*map*/		var arr = [25,21,89,61,88];
+			var result = arr.map(item=>item>60?"及格":"不及格");
+			console.log(result)
+
+/*reduce*/   //( 临时结果， item每个数  , i 下标 )
+ 			var arr2 = [12,5654,556,5565];
+ 			var result2 = arr2.reduce((a,item,i)=>{
+ 				// console.log(a)
+ 				// console.log(item)
+ 				// console.log(i)
+ 				return (a+item)/i+1
+ 			})
+ 			console.log(result2)
+
+ /*filter*/  
+ 			var arr3 = [
+ 				{ id:1,name:"男士内裤",price:35 },
+ 				{ id:2,name:"女士包",price:35000 },
+ 				{ id:3,name:"男士包",price:45 },
+ 				{ id:4,name:"女士内裤",price:12000 }
+ 			]
+ 			let result3 = arr3.filter(item=>item.price>1000)			
+ 			console.log(result3)
+
+ /*forEach*/
+ 			var arr4 = [
+ 				{ id:1,name:"男士内裤",price:35 },
+ 				{ id:2,name:"女士包",price:35000 },
+ 				{ id:3,name:"男士包",price:45 },
+ 				{ id:4,name:"女士内裤",price:12000 }
+ 			];
+ 			let result4 = arr4.forEach((item,i)=>{
+	 			console.log(item)
+ 			})
+
+	</script>
+</html>
