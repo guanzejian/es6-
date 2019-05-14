@@ -21,5 +21,33 @@
 		// })
 		arr.sort((a,b)=>a-b);
 		alert(arr)
+
+
+
+
+// this 指向问题
+var a=11
+function test1(){
+  this.a=22;
+  let b=function(){
+    console.log(this.a);  // 11
+  };
+  b();
+}
+var x=new test1();
+
+// 为什么会输出11？因为普通函数中的this指向的是调用它的对象，如果没有直接调用对象，会指向undefined或者window，一般都会指向window，在严格模式下才会指向undefined。上述的例子中，并没有明确的调用对象，而普通函数中的this并不会向上继续找对象，所以直接返回window
+
+
+var a=11;
+function test2(){
+  this.a=22;
+  let b=()=>{console.log(this.a)}
+  b();
+}
+var x=new test2();
+ // 箭头函数中会往上寻找this，直到找到所代表的this为止。例子中，构造函数被实例化成为一个对象x，那x中的this指代的就是对象x本身，所以箭头函数this就代表x对象，x对象内部的a值为22，所以输出22。
+
+
 	</script>
 </html>
