@@ -23,17 +23,10 @@ span{
 	border:1px solid #333;
 }
 
-.borColor{
-	border-color: skyblue;
-}
+
 	</style>
 	<body style="">
-		<span class="borColor" onclick="spanz($(this))">2</span>
-		<span  onclick="spanz($(this))">212</span>
-		<span  onclick="spanz($(this))">31</span>
-		<span onclick="spanz($(this))">1221</span>
-		<span onclick="spanz($(this))">222</span>
-		<input type="hidden" name="kk">
+
 		
 	</body>
 	 <script
@@ -42,23 +35,18 @@ span{
   crossorigin="anonymous"></script>
 
 	<script>
-		// var a = 'the window';
-		// var obj = {
-		// 	a : 'my obj',
-		// 	getName:function(){
-		// 		console.log(this)
-		// 		return function(){
-		// 			console.log(this)
-		// 			return this.a
-		// 		}
-		// 	}
-		// }
-		// alert(obj.getName()());
-		function spanz(obj){
-			
-			obj.addClass('borColor').siblings().removeClass("borColor");
-			$("input[name='kk']").val(obj.html());
-			console.log($('input[name="kk"]').val());
+		var a = 'the window';
+		var obj = {
+			a : 'my obj',
+			getName:function(){
+				console.log(this)
+				return function(){
+					console.log(this)
+					return this.a
+				}
+			}
 		}
+		alert(obj.getName()());
+		
 	</script>
 </html>
