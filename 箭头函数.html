@@ -36,7 +36,9 @@ function test1(){
 }
 var x=new test1();
 
-// 为什么会输出11？因为普通函数中的this指向的是调用它的对象，如果没有直接调用对象，会指向undefined或者window，一般都会指向window，在严格模式下才会指向undefined。上述的例子中，并没有明确的调用对象，而普通函数中的this并不会向上继续找对象，所以直接返回window
+// 为什么会输出11？因为普通函数中的this指向的是调用它的对象，如果没有直接调用对象，会指向undefined或者window，
+// 一般都会指向window，在严格模式下才会指向undefined。上述的例子中，并没有明确的调用对象，
+// 而普通函数中的this并不会向上继续找对象，所以直接返回window
 
 
 var a=11;
